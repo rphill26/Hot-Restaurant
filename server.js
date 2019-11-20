@@ -9,7 +9,7 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(express.static('public'));
 // Data
 var reservations =
     [
@@ -52,7 +52,7 @@ app.get("/reserve", function (req, res) {
 });
 
 // Displays all characters
-app.get("/api/tables", function (req, res) {
+app.get("/api/reserve", function (req, res) {
     return res.json(reservations);
 });
 
