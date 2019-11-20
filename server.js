@@ -51,7 +51,7 @@ app.get("/reserve", function (req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Displays all characters
+// Displays all charactersdd
 app.get("/api/tables", function (req, res) {
     return res.json(reservations);
 });
@@ -90,6 +90,7 @@ app.post("/api/reservations", function (req, res) {
         reservations.push(newReservation);
     } else {
         waitlist.push(newReservation);
+        
     }
     res.json(newReservation);
 });
