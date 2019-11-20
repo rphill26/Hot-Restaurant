@@ -62,13 +62,18 @@
     </div>
     <script>
         $(".submit").on("click", function(event){
-            event.preventDefault()
+            event.preventDefault();
             const newReservation = {
                 customerName: $("#reserve_name").val().trim(),
                 phoneNumber: $("#reserve_phone").val().trim(),
                 customerEmail: $("#reserve_email").val().trim(),
                 customerID: $("#reserve_uniqueID").val().trim()
             };
+        $.post("/api/reservations", newReservation)
+            .then((data)=>{
+                console.log("reserve.html", data)
+                alert("added")
+            })
         })
     </script>
 
