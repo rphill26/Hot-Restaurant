@@ -56,7 +56,8 @@
         </div>
     </div>
     <script>
-        $(".submit").on("click", function(){
+        $(".submit").on("click", function(event){
+            event.preventDefault()
             const newReservation = {
                 customerName: $("#reserve_name").val().trim(),
                 phoneNumber: $("#reserve_phone").val().trim(),
