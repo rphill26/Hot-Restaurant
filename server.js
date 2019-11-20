@@ -44,7 +44,7 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "homepage.html"));
 });
 
-app.get("/tables", function (req, res) {
+app.get("/table", function (req, res) {
     res.sendFile(path.join(__dirname, "table.html"));
 });
 app.get("/reserve", function (req, res) {
