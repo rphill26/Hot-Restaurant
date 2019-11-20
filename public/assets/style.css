@@ -1,9 +1,15 @@
 .jumbo{
     text-align: center;
+    color: aqua;
+    background-color: black;
 }
 .resForm{
     margin:0 2vw;
 }
 .footer{
     margin: 0 2vw;
+}
+footer{
+    background-color: aqua;
+    color: black;
 }
