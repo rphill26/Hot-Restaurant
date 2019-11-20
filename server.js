@@ -84,10 +84,11 @@ app.post("/api/reservations", function (req, res) {
     var newReservation = req.body;
 
     console.log(newReservation);
-
-    // check length of reservations array, if 5 or more push to waitlist
-    reservations.push(newReservation)
-        
+    if(reservations.length >= 5) {
+        reservations.push(newReservation) 
+    } else{
+        waitlist.push(newReservation)
+    }
     
     res.json(reservations);
 });
