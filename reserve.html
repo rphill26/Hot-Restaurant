@@ -19,7 +19,7 @@
         <h4 class="jumbo">Make Your Reservation</h4>
         <hr class="my-4">
         <div class="jumbo">
-            <a class="btn btn-primary btn-lg jumbo" href="" role="button">View Tables</a>
+            <a class="btn btn-primary btn-lg jumbo" href="table.html" role="button">View Tables</a>
             <a class="btn btn-primary btn-lg jumbo" href="homepage.html" role="button">Home</a>
         </div>
     </div>
@@ -29,19 +29,19 @@
                 <h6>Table Reservation</h6>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="reserve_name">
                 </div>
                 <div class="form-group">
                     <label for="phone number">Phone Number</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="reserve_phone">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="reserve_email">
                 </div>
                 <div class="form-group">
                     <label for="unique id">Unique ID</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="reserve_uniqueID">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -51,9 +51,20 @@
     <div class="row footer">
         <div class="col">
             <a href="api/table">API Table Link</a>
+            |
             <a href="api/waitlist">API Wait List</a>
         </div>
     </div>
+    <script>
+        $(".submit").on("click", function(){
+            const newReservation = {
+                customerName: $("#reserve_name").val().trim(),
+                phoneNumber: $("#reserve_phone").val().trim(),
+                customerEmail: $("#reserve_email").val().trim(),
+                customerID: $("#reserve_uniqueID").val().trim()
+            };
+        })
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
